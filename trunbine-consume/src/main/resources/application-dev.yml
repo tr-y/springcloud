@@ -1,0 +1,19 @@
+server:
+  port: 8000
+
+feign:
+  hystrix:
+    enabled: true
+
+turbine:
+  instanceUrlSuffix: /hystrix.stream
+  aggregator:
+    cluster-config: default
+  cluster-name-expression: "'default'"
+  app-config: turbine,turbine01
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream

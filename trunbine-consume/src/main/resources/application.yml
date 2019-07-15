@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: turbine
+  profiles:
+    active: dev
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: "http://localhost:8087/eureka/"

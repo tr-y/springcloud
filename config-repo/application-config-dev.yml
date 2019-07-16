@@ -1,1 +1,1 @@
-configtest: hello,test,value
+configtest: hello,test,value,cache

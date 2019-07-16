@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: configure
+  cloud:
+    bus:
+      trace:
+        enabled: true
+    config:
+      server:
+        git:
+          search-paths: config-repo   #配置文件夹
+          username:                   #github 用户名
+          password:                   #密码
+          uri:                        #项目地址
+  #        native:                    #指定配置文件的位置
+  #          search-locations: file:E:/properties/
+  #  profiles:  设置本地存储配置，url:src/main/resource
+  #    active:
+  #      native
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+server:
+  port: 8003
+
+
+#用于configure refresh刷新
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: "http://localhost:8087/eureka/"

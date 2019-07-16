@@ -1,0 +1,14 @@
+spring:
+  cloud:
+      config:
+        profile: dev
+        name: application-config
+#        uri: http://localhost:8003/  # 配置eureka后注释，更换成discovery
+        label: master
+        discovery:
+          enabled: true          #开启配置服务发现支持
+          service-id: configure  #指定服务器端的名称
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: "http://localhost:8087/eureka/"

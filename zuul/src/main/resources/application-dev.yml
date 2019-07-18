@@ -1,0 +1,78 @@
+spring:
+  application:
+    name: zuul_proxy
+
+server:
+  port: 8006
+
+
+zuul:
+  FormBodyWrapperFilter:
+    pre:
+      disable: true
+  retryable: true   #是否重复开启
+ribbon:
+  MaxAutoRetries: 2 #当前服务重连次数
+  MaxAutoRetriesNextServer: 0 #切换相同server的次数
+
+
+#  routes:
+#    baidu:   #可随意填写
+#      path: '/it/**'
+#      url: 'http://www.github.com'#需要添加http，否则报错
+#    api-a:
+#      path: /hello/**
+#      url: http://localhost:8087/get/    #不需要连入eurka
+#      service-id: producer
+
+#不配置zuul.service-id 默认配置
+#http://ZUUL_HOST:ZUUL_PORT/serviceId/**
+
+
+
+
+
+eureka:
+  client:
+    service-url:
+#      defaultZone: http://localhost:8087/eureka/,http://localhost:8088/eureka/
+      defaultZone: http://localhost:8087/eureka/
+
+
+
+
+#other:
+#网关超时配置由三方面组成:
+#zuul\ribbon/hystrix
+  例子
+#zuul:
+#max:
+#host:
+#connections: 500
+#host:
+#socket-timeout-millis: 60000
+#connect-timeout-millis: 60000
+#
+#  ribbon
+#
+#ribbon:
+#ReadTimeout: 10000
+#ConnectTimeout: 10000
+#MaxAutoRetries: 0
+#MaxAutoRetriesNextServer: 1
+#eureka:
+#enabled: true
+#
+#  hystrix
+#
+#hystrix:
+#command:
+#default:
+#execution:
+#timeout:
+#enabled: true
+#isolation:
+#thread:
+#timeoutInMilliseconds: 60000
+
+

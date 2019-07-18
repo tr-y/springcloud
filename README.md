@@ -1,3 +1,3 @@
 # springcloud-demo
-almost spring cloud demo
+spring cloud demo
 version: 2.x

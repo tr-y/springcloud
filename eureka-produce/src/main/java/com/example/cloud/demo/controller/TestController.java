@@ -16,7 +16,7 @@ public class TestController {
     }
 
     @ResponseBody
-    @GetMapping(value = "getZuulTest")
+    @GetMapping(value = "ZuulTest")
     public Map  getZuulTest(@RequestParam(value = "name") String name){
         Map  resultMap = new HashMap();
         resultMap.put("data",name);

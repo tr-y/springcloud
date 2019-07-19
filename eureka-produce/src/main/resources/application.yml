@@ -3,6 +3,11 @@ spring:
     name: producer
   profiles:
     active: dev
+  zipkin:
+    base-url: http://localhost:9411/
+  sleuth:
+    sampler:
+      probaility: 1.0  #采样率，模式0.1，也就是10%，为了便于观察效果，改为1.0，也就是100%。生产环境建议保持默认。
 
 eureka:
   instance:
@@ -11,6 +16,7 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     serviceUrl:
-      defaultZone: http://peer2:8088/eureka/
+      defaultZone: http://localhost:8087/eureka/
 
 
+#zipkin 配置
